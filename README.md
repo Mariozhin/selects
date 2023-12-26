@@ -13,3 +13,9 @@ JOIN
     ProdutoFornecedor ON PedidoProduto.NúmeroProduto = ProdutoFornecedor.NúmeroProduto
 JOIN 
     Fornecedor ON ProdutoFornecedor.CNPJFornecedor = Fornecedor.CNPJFornecedor;
+----------------------------------------------------------------------------------
+
+SELECT Pedido.numeroPedido,COUNT(PedidoProduto.numeroproduto) AS TotalProdutos
+FROM Pedido
+JOIN PedidoProduto ON Pedido.numeropedido = PedidoProduto.numeropedido
+GROUP BY Pedido.numeropedido;
